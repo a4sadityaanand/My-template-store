@@ -1,336 +1,742 @@
+/* ================================
+   RESET
+================================ */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+/* ================================
+   BODY
+================================ */
+
 body {
+
     font-family: Arial, sans-serif;
-    background: #f5f7fb;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5f7fb,
+            #eef2ff
+        );
+
     color: #222;
+
     line-height: 1.6;
+
     animation: pageLoad 0.7s ease;
 }
 
-/* HEADER */
 
-
-
-
-
+/* ================================
+   HEADER
+================================ */
 
 .site-header {
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     gap: 20px;
+
+    background: #111827;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    overflow: hidden;
 }
+
 
 .logo {
+
     width: 80px;
+
     height: 80px;
+
     object-fit: contain;
+
     border-radius: 50%;
-}
 
-@media (max-width: 600px) {
-    .site-header {
-        flex-direction: column;
-        text-align: center;
-    }
+    animation: logoFloat 3s ease-in-out infinite;
 
-    .logo {
-        width: 70px;
-        height: 70px;
-    }
+    box-shadow:
+        0 0 0 4px rgba(255,255,255,0.08),
+        0 8px 25px rgba(0,0,0,0.3);
 }
 
 
+.site-header h1 {
 
-
-
-
-header {
-    background: #111827;
-    color: white;
-    text-align: center;
-    padding: 35px 20px;
-}
-
-header h1 {
     font-size: 36px;
+
     margin-bottom: 8px;
 }
 
-header p {
+
+.site-header p {
+
     color: #d1d5db;
+
+    font-size: 15px;
 }
 
 
-/* MAIN */
+/* ================================
+   MAIN
+================================ */
 
 main {
+
     max-width: 1100px;
+
     margin: auto;
+
     padding: 30px 20px;
 }
 
 
-/* HERO */
+/* ================================
+   HERO
+================================ */
 
 .hero {
+
     background: white;
+
     text-align: center;
-    padding: 50px 25px;
-    border-radius: 16px;
-    margin-bottom: 40px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    padding: 55px 25px;
+
+    border-radius: 20px;
+
+    margin-bottom: 45px;
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.08);
+
+    animation: heroAppear 0.9s ease;
+
+    overflow: hidden;
 }
 
-.hero h2 {
-    font-size: 30px;
+
+.typing-box {
+
+    min-height: 50px;
+
     margin-bottom: 15px;
-    animation: slideDown 0.8s ease;
-}
-
-.hero p {
-    color: #666;
-    margin-bottom: 25px;
-    animation: slideUp 0.9s ease;
 }
 
 
-/* CONTACT BUTTONS */
+#typing-text {
 
-.whatsapp,
-.email {
     display: inline-block;
-    color: white;
-    text-decoration: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-weight: bold;
-    margin: 5px;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-}
 
-.whatsapp {
-    background: #25d366;
-}
+    color: #2563eb;
 
-.email {
-    background: #2563eb;
-}
-
-.whatsapp:hover,
-.email:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
-}
-
-
-/* SERVICES TITLE */
-
-.services > h2 {
-    text-align: center;
     font-size: 30px;
-    margin-bottom: 25px;
+
+    font-weight: bold;
+
+    border-right: 3px solid #2563eb;
+
+    padding-right: 5px;
+
+    animation: cursorBlink 0.7s infinite;
 }
 
 
-/* SERVICE CARD */
+.hero h3 {
 
-.service-card {
-    background: white;
-    min-height: 220px;
-    margin-bottom: 25px;
-    border-radius: 15px;
-    padding: 20px;
-
-    display: flex;
-    align-items: center;
-    gap: 30px;
-
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-
-/* CARD HOVER */
-
-.service-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-}
-
-
-/* LEFT SIDE */
-
-.service-info {
-    width: 42%;
-    padding: 15px;
-}
-
-.service-info h3 {
     font-size: 22px;
+
     margin-bottom: 12px;
 }
 
-.service-info p {
+
+.hero p {
+
     color: #666;
-    margin-bottom: 20px;
+
+    max-width: 750px;
+
+    margin:
+        0 auto 25px;
 }
 
 
-/* ORDER BUTTON */
+/* ================================
+   CONTACT BUTTONS
+================================ */
 
-button {
-    border: none;
-    background: #2563eb;
+.contact-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+
+.whatsapp,
+.email {
+
+    display: inline-block;
+
     color: white;
-    padding: 11px 20px;
-    border-radius: 7px;
-    cursor: pointer;
-    font-size: 15px;
+
+    text-decoration: none;
+
+    padding: 13px 25px;
+
+    border-radius: 9px;
+
+    font-weight: bold;
 
     transition:
-        transform 0.2s ease,
-        background 0.2s ease;
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        opacity 0.25s ease;
 }
+
+
+.whatsapp {
+
+    background: #25d366;
+}
+
+
+.email {
+
+    background: #2563eb;
+}
+
+
+.whatsapp:hover,
+.email:hover {
+
+    transform:
+        translateY(-3px)
+        scale(1.03);
+
+    opacity: 0.95;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.15);
+}
+
+
+/* ================================
+   SERVICES
+================================ */
+
+.services > h2 {
+
+    text-align: center;
+
+    font-size: 30px;
+
+    margin-bottom: 5px;
+}
+
+
+.service-subtitle {
+
+    text-align: center;
+
+    color: #666;
+
+    margin-bottom: 30px;
+}
+
+
+/* ================================
+   SERVICE CARD
+================================ */
+
+.service-card {
+
+    background: white;
+
+    min-height: 220px;
+
+    margin-bottom: 25px;
+
+    border-radius: 17px;
+
+    padding: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.07);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+
+    animation: cardAppear 0.8s ease both;
+}
+
+
+.service-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.14);
+}
+
+
+/* ================================
+   LEFT SIDE
+================================ */
+
+.service-info {
+
+    width: 42%;
+
+    padding: 15px;
+}
+
+
+.service-info h3 {
+
+    font-size: 22px;
+
+    margin-bottom: 12px;
+}
+
+
+.service-info p {
+
+    color: #666;
+
+    margin-bottom: 12px;
+}
+
+
+/* ================================
+   PRICE
+================================ */
+
+.price {
+
+    display: inline-block;
+
+    color: #166534;
+
+    background: #dcfce7;
+
+    padding: 6px 12px;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+}
+
+
+.delivery {
+
+    color: #555;
+
+    font-size: 14px;
+
+    margin-bottom: 16px;
+}
+
+
+/* ================================
+   ORDER BUTTON
+================================ */
+
+button {
+
+    border: none;
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: 11px 21px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
 
 button:hover {
+
     background: #1d4ed8;
-    transform: scale(1.05);
+
+    transform:
+        translateY(-3px)
+        scale(1.04);
+
+    box-shadow:
+        0 8px 18px rgba(37,99,235,0.3);
 }
 
 
-/* RIGHT SIDE SAMPLE */
+button:active {
+
+    transform:
+        scale(0.96);
+}
+
+
+/* ================================
+   RIGHT SIDE IMAGE
+================================ */
 
 .sample {
+
     width: 58%;
+
     text-align: center;
 }
 
+
 .sample img {
+
     width: 100%;
+
     max-height: 220px;
+
     object-fit: contain;
-    border-radius: 8px;
+
+    border-radius: 10px;
+
     display: block;
+
     margin-bottom: 8px;
 
-    transition: transform 0.4s ease;
+    transition:
+        transform 0.5s ease;
 }
+
 
 .service-card:hover .sample img {
-    transform: scale(1.04);
+
+    transform:
+        scale(1.05);
 }
 
+
 .sample span {
+
     color: #666;
+
     font-size: 13px;
 }
 
 
-/* CUSTOM WORK */
+/* ================================
+   CUSTOM WORK
+================================ */
 
 .custom {
+
     background: white;
+
     text-align: center;
-    padding: 40px 20px;
-    margin-top: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+
+    padding: 45px 20px;
+
+    margin-top: 45px;
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 4px 15px rgba(0,0,0,0.07);
 }
 
+
 .custom h2 {
+
     margin-bottom: 10px;
 }
 
+
 .custom p {
+
     color: #666;
+
+    margin-bottom: 15px;
+}
+
+
+.custom-price {
+
+    display: inline-block;
+
+    background: #fef3c7;
+
+    color: #92400e;
+
+    padding: 8px 14px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
     margin-bottom: 20px;
 }
 
 
-/* FOOTER */
+/* ================================
+   FOOTER
+================================ */
 
 footer {
+
     background: #111827;
+
     color: white;
+
     text-align: center;
-    padding: 20px;
-    margin-top: 40px;
+
+    padding: 25px 15px;
+
+    margin-top: 45px;
 }
 
 
-/* ANIMATIONS */
+footer p {
+
+    margin: 5px 0;
+}
+
+
+footer a {
+
+    color: #60a5fa;
+
+    text-decoration: none;
+}
+
+
+footer a:hover {
+
+    text-decoration: underline;
+}
+
+
+/* ================================
+   ANIMATIONS
+================================ */
 
 @keyframes pageLoad {
+
     from {
+
         opacity: 0;
     }
 
     to {
+
         opacity: 1;
     }
 }
 
-@keyframes slideDown {
+
+@keyframes heroAppear {
+
     from {
+
         opacity: 0;
-        transform: translateY(-20px);
+
+        transform:
+            translateY(-25px);
     }
 
     to {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 }
 
-@keyframes slideUp {
+
+@keyframes cardAppear {
+
     from {
+
         opacity: 0;
-        transform: translateY(20px);
+
+        transform:
+            translateY(25px);
     }
 
     to {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 }
 
 
-/* MOBILE */
+@keyframes logoFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-7px);
+    }
+}
+
+
+@keyframes cursorBlink {
+
+    0%,
+    50% {
+
+        border-color: #2563eb;
+    }
+
+    51%,
+    100% {
+
+        border-color: transparent;
+    }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
 
 @media (max-width: 700px) {
 
-    .service-card {
+    .site-header {
+
         flex-direction: column;
-        align-items: stretch;
+
+        text-align: center;
     }
 
-    .service-info,
-    .sample {
-        width: 100%;
+
+    .logo {
+
+        width: 70px;
+
+        height: 70px;
     }
 
-    .service-info {
-        padding: 10px;
-    }
 
-    header h1 {
+    .site-header h1 {
+
         font-size: 28px;
     }
 
-    .hero h2 {
-        font-size: 24px;
+
+    .hero {
+
+        padding:
+            40px 18px;
     }
 
+
+    #typing-text {
+
+        font-size: 23px;
+    }
+
+
+    .hero h3 {
+
+        font-size: 19px;
+    }
+
+
+    .service-card {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 15px;
+    }
+
+
+    .service-info,
+    .sample {
+
+        width: 100%;
+    }
+
+
+    .service-info {
+
+        padding: 10px;
+    }
+
+
+    .service-info h3 {
+
+        font-size: 20px;
+    }
+
+
     .sample img {
+
         max-height: 250px;
+    }
+
+
+    .contact-buttons {
+
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .whatsapp,
+    .email {
+
+        text-align: center;
     }
 }
