@@ -1,5 +1,5 @@
 function order(service) {
-    const phone = "91XXXXXXXXXX";
+    const phone = "7348152598";
 
     const message =
         "Hello! I am interested in your " +
